@@ -79,8 +79,13 @@
         text-overflow: ellipsis;
         white-space:nowrap;
       }
+      &:hover {
+        background-color: lighten(@tool-panel-background-color, 10%);
+        cursor: pointer;
+      }
     }
   }
+
   .file {
     .mode {
       padding: 5 * @units;
@@ -139,7 +144,7 @@
     }
 
     &:hover {
-      background-color: @button-background-color-hover;
+      background-color: lighten(@tool-panel-background-color, 10%);
       cursor: pointer;
     }
   }
