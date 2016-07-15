@@ -188,31 +188,40 @@
       color: @background-color-selected;
     }
   }
-  .tab-bar {
+
+  ul.tab-bar {
     display: -webkit-flex;
     -webkit-flex: 0 0 auto;
-  	margin: 0px;
-    border-bottom: 0px #fff;
-    background: @dark-background;
+    background: rgba(0,0,0,0);
+    border: none;
+    margin: 0;
+
     .tab {
       -webkit-flex: 1;
-      font-size: 11px;
-      position: relative;
-      padding-left: 10px;
-      padding-right: 10px;
-      max-width: 100px;
-      min-width: 40px;
+      min-width: 8em;
+      background-color: @tab-background-color;
+
       &.active {
+        background-color: @tab-background-color-active;
         -webkit-flex: 2;
       }
+
       .title {
         overflow: hidden;
         white-space: nowrap;
-        text-overflow: ellipsis;
-        &:first-letter {
-          text-decoration: underline;
+        color: lighten(@text-color, 10%);
+        &::first-letter {
+          text-decoration-line: underline;
         }
       }
+    }
+
+    &.inset-panel.list-inline::before {
+      background: none;
+    }
+
+    &.inset-panel.list-inline::after {
+      background: none;
     }
   }
 }
