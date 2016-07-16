@@ -188,10 +188,10 @@
   .lists {
       -webkit-flex: 1 1 auto;
       overflow: auto;
+      background-color: @tool-panel-background-color;
   }
 
   &.focused {
-    background-color: darken(@tree-view-background-color, 2%);
     .selected .filename, .branch-brief-view.selected, .commit.selected, .file.selected {
       background-color: @background-color-selected;
       .message {
