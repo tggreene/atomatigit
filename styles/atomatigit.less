@@ -95,25 +95,37 @@
       font-family: monospace;
 
       .diff-chunk {
-        padding: 10*@units 0px;
-        border-bottom: 1px solid @tree-view-border-color;
-        &.selected {
-          background-color: #fff;
-        }
+        padding: 0px 0px;
+        background-color: darken(@background-color-selected, 10%);
+
         .diff-line {
           padding-left: 25 * @units;
           overflow: hidden;
           text-overflow: ellipsis;
-          white-space:nowrap;
+          white-space: nowrap;
+          background-color: @tool-panel-background-color;
 
           &.addition {
-            background-color: mix(@background-color-success,
-                                  @tree-view-background-color, 15%);
+            background-color: mix(@background-color-success, @tool-panel-background-color, 20%);
           }
 
           &.subtraction {
-            background-color: mix(@background-color-error,
-                                  @tree-view-background-color, 15%);
+            background-color: mix(@background-color-error, @tool-panel-background-color, 20%);
+          }
+        }
+
+        &.selected {
+
+          .diff-line {
+            background-color: @background-color-highlight;
+
+            &.addition {
+              background-color: mix(@background-color-success, @background-color-highlight, 15%);
+            }
+
+            &.subtraction {
+              background-color: mix(@background-color-error, @background-color-highlight, 15%);
+            }
           }
         }
       }
