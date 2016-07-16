@@ -9,15 +9,16 @@
   -moz-box-sizing: @type;
   box-sizing: @type;
 }
+
 @units: 0.1em;
 @close-icon-size: 12px;
-@dark-background: darken(@tree-view-background-color, 5%);
+@dark-background: darken(@tool-panel-background-color, 5%);
 
 .atomatigit {
   position: relative;
+  background-color: @inset-panel-background-color;
   width: 300 * @units;
   padding: 0px;
-  background-color: darken(@tree-view-background-color, 5%);
   color: @text-color;
 
   display: -webkit-flex;
@@ -44,7 +45,7 @@
     width: 10px;
     cursor: col-resize;
   }
-  
+
   .commit-list-view {
     .commit {
       padding: 5 * @units 0px;
@@ -158,7 +159,6 @@
     text-align: right;
     padding: 20 * @units;
     padding-bottom: 10 * @units;
-    background-color: @dark-background;
     -webkit-flex: 0 0 auto;
     &.selected {
       background-color: @dark-background;
