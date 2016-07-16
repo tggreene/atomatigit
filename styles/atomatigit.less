@@ -22,9 +22,8 @@
   width           : 30em;
   padding         : 0px;
   color           : @text-color;
-
+  display         : flex;
   flex-direction  : column;
-  height          : 100vh;
 
 
   .hidden {
@@ -82,9 +81,9 @@
                    'Source Code Pro',
                    'Consolas',
                    'Ubuntu Mono',
-                   'Inconsolata-g',
                    'Monaco',
                    'Menlo',
+                   'Inconsolata-g',
                    monospace;
       font-size  : 0.8em;
 
@@ -133,7 +132,7 @@
       font-style   : italic;
       overflow     : hidden;
       text-overflow: ellipsis;
-      white-space  :nowrap;
+      white-space  : nowrap;
     }
 
     .highlight-on-hover;
@@ -161,9 +160,14 @@
   }
 
   .lists {
-      flex            : 1 1 auto;
+      flex-grow       : 1;
+      display         : flex;
+      flex-direction  : column;
       overflow        : auto;
       background-color: @tool-panel-background-color;
+      > .list-view {
+        flex-grow: 1;
+      }
   }
 
   &.focused {
@@ -194,7 +198,6 @@
 
       &.active {
         background-color: @tab-background-color-active;
-        flex            : 2;
       }
 
       .title {
