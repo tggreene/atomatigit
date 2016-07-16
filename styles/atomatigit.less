@@ -76,7 +76,7 @@
         text-overflow: ellipsis;
         white-space:nowrap;
       }
-      
+
       .highlight-on-hover;
     }
   }
@@ -151,25 +151,22 @@
 
   .current-branch-view {
     text-align: right;
-    padding: 20 * @units;
-    padding-bottom: 10 * @units;
+    padding: 2em;
+    padding-bottom: 1em;
     -webkit-flex: 0 0 auto;
-    &.selected {
-      background-color: @dark-background;
-    }
+
     &.unpushed {
       color: @text-color-warning;
     }
+
     .name {
       display: block;
-      font-size: 2em;
+      font-size: 1.5em;
       font-weight: bold;
     }
+
     .commit {
       display: block;
-    }
-    &:hover {
-      background-color: @dark-background;
     }
   }
 
@@ -191,10 +188,6 @@
           .octicon("arrow-right");
         }
       }
-    }
-
-    .current-branch-view .name {
-      color: @background-color-selected;
     }
   }
 
