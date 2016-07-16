@@ -4,20 +4,11 @@
 // for a full listing of what's available.
 @import "ui-variables";
 @import "octicon-mixins";
-.box-sizing (@type: border-box) {
-  -webkit-box-sizing: @type;
-  -moz-box-sizing: @type;
-  box-sizing: @type;
-}
-
-@units: 0.1em;
-@close-icon-size: 12px;
-@dark-background: darken(@tool-panel-background-color, 5%);
 
 .highlight-on-hover {
   &:hover {
     background-color: lighten(@tool-panel-background-color, 10%);
-    cursor: pointer;
+    cursor          : pointer;
   }
 }
 
@@ -26,15 +17,14 @@
 }
 
 .atomatigit {
-  position: relative;
+  position        : relative;
   background-color: @inset-panel-background-color;
-  width: 300 * @units;
-  padding: 0px;
-  color: @text-color;
+  width           : 30em;
+  padding         : 0px;
+  color           : @text-color;
 
-  display: -webkit-flex;
-  -webkit-flex-direction: column;
-  height: 100vh;
+  flex-direction  : column;
+  height          : 100vh;
 
 
   .hidden {
@@ -43,38 +33,38 @@
 
   .spinner {
     position: absolute;
-    top: 15 * @units;
-    left: 15 * @units;
-    display: none;
+    top     : 1.5em;
+    left    : 1.5em;
+    display : none;
   }
 
   .resize-handle {
-    position:absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: 10px;
-    cursor: col-resize;
+    position: absolute;
+    top     : 0;
+    bottom  : 0;
+    left    : -5px;
+    width   : 10px;
+    cursor  : col-resize;
   }
 
   .commit-list-view {
     .commit {
-      padding: 5 * @units 0px;
+      padding: 0.5em 0;
       .id {
-        font-weight: bold;
-        display: inline-block;
-        padding-left: 15 * @units;
+        font-weight : bold;
+        display     : inline-block;
+        padding-left: 1.5em;
       }
       .author-name {
-        font-style: italic;
-        display: inline-block;
-        padding-left: 5 * @units;
+        font-style  : italic;
+        display     : inline-block;
+        padding-left: 0.5em;
       }
       .message {
-        padding-left: 15 * @units;
-        overflow: hidden;
+        padding-left : 1.5em;
+        overflow     : hidden;
         text-overflow: ellipsis;
-        white-space:nowrap;
+        white-space  : nowrap;
       }
 
       .highlight-on-hover;
@@ -83,8 +73,8 @@
 
   .file {
     .mode {
-      padding: 5 * @units;
-      padding-left: 25 * @units;
+      padding     : 0.5em;
+      padding-left: 2.5em;
     }
 
     .diff {
@@ -96,16 +86,16 @@
                    'Monaco',
                    'Menlo',
                    monospace;
-      font-size: 0.8em;
+      font-size  : 0.8em;
 
       .diff-chunk {
         padding: 0 0;
 
         .diff-line {
-          padding-left: 25 * @units;
-          overflow: hidden;
+          padding-left : 2.5em;
+          overflow     : hidden;
           text-overflow: ellipsis;
-          white-space: nowrap;
+          white-space  : nowrap;
 
           &.addition {
             .blend-background-color(@background-color-success, @tool-panel-background-color);
@@ -125,43 +115,43 @@
   }
 
   h2 {
-    padding-left: 15 * @units;
+    padding-left: 1.5em;
     font-size: 1.2em;
     font-weight: bold;
   }
 
   .branch-brief-view {
-    padding: 5 * @units;
-    padding-left: 25 * @units;
+    padding: 0.5em;
+    padding-left: 2.5em;
 
     .name {
-      margin: 0px;
+      margin: 0;
       font-weight: bold;
     }
 
     .commit {
-      font-style: italic;
-      overflow: hidden;
+      font-style   : italic;
+      overflow     : hidden;
       text-overflow: ellipsis;
-      white-space:nowrap;
+      white-space  :nowrap;
     }
 
     .highlight-on-hover;
   }
 
   .current-branch-view {
-    text-align: right;
-    padding: 2em;
+    text-align    : right;
+    padding       : 2em;
     padding-bottom: 1em;
-    -webkit-flex: 0 0 auto;
+    flex          : 0 0 auto;
 
     &.unpushed {
       color: @text-color-warning;
     }
 
     .name {
-      display: block;
-      font-size: 1.5em;
+      display    : block;
+      font-size  : 1.5em;
       font-weight: bold;
     }
 
@@ -171,8 +161,8 @@
   }
 
   .lists {
-      -webkit-flex: 1 1 auto;
-      overflow: auto;
+      flex            : 1 1 auto;
+      overflow        : auto;
       background-color: @tool-panel-background-color;
   }
 
@@ -192,26 +182,25 @@
   }
 
   ul.tab-bar {
-    display: -webkit-flex;
-    -webkit-flex: 0 0 auto;
+    flex      : 0 0 auto;
     background: rgba(0,0,0,0);
-    border: none;
-    margin: 0;
+    border    : none;
+    margin    : 0;
 
     .tab {
-      -webkit-flex: 1;
-      min-width: 8em;
+      flex            : 1;
+      min-width       : 8em;
       background-color: @tab-background-color;
 
       &.active {
         background-color: @tab-background-color-active;
-        -webkit-flex: 2;
+        flex            : 2;
       }
 
       .title {
-        overflow: hidden;
+        overflow   : hidden;
         white-space: nowrap;
-        color: lighten(@text-color, 10%);
+        color      : lighten(@text-color, 10%);
         &::first-letter {
           text-decoration-line: underline;
         }
@@ -231,6 +220,6 @@
 .atomatigit-error {
   .error-message {
     background-color: @background-color-error;
-    color: @text-color-error;
+    color           : @text-color-error;
   }
 }
