@@ -14,6 +14,13 @@
 @close-icon-size: 12px;
 @dark-background: darken(@tool-panel-background-color, 5%);
 
+.highlight-on-hover {
+  &:hover {
+    background-color: lighten(@tool-panel-background-color, 10%);
+    cursor: pointer;
+  }
+}
+
 .atomatigit {
   position: relative;
   background-color: @inset-panel-background-color;
@@ -65,10 +72,8 @@
         text-overflow: ellipsis;
         white-space:nowrap;
       }
-      &:hover {
-        background-color: lighten(@tool-panel-background-color, 10%);
-        cursor: pointer;
-      }
+      
+      .highlight-on-hover;
     }
   }
 
@@ -149,10 +154,7 @@
       white-space:nowrap;
     }
 
-    &:hover {
-      background-color: lighten(@tool-panel-background-color, 10%);
-      cursor: pointer;
-    }
+    .highlight-on-hover;
   }
 
   .current-branch-view {
